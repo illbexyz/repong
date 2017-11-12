@@ -6,7 +6,9 @@ let ballRadius = 20.;
 let pVelocity = 450.;
 let ballVelIncrement = 50.;
 
-type winner = Player1 | Player2 | None;
+type maybe('a) = Some('a) | None;
+
+type winner = Player1 | Player2;
 
 type pongState = {
   started: bool,
@@ -103,9 +105,9 @@ let nextIAVelocity = (~player2Pos: (float, float), ~player2Vel: float, ~ballPos:
 
 let gameover = (ballY) =>
   if (ballY <= 0.0) {
-    Player1
+    Some(Player1)
   } else if (ballY >= 600.0) {
-    Player2
+    Some(Player2)
   } else {
     None
   }
@@ -116,7 +118,6 @@ let updateScore = (winner: winner, score) => {
   switch(winner) {
   | Player1 => (score1 + 1, score2)
   | Player2 => (score1, score2 + 1)
-  | _ => score
   }
 };
 
@@ -149,7 +150,7 @@ let draw = ({ font, started, time, player1Pos, player2Pos, player1V, player2V, b
       ballPos: (ballX +. new_ballVX *. deltaTime, ballY +. new_ballVY *. deltaTime),
       player2V: nextIAVelocity(~player2Pos, ~player2Vel=player2V, ~ballPos)
     }
-  | (true, winner) => {
+  | (true, Some(winner)) => {
       ...initialState(env),
       score: updateScore(winner, score)
     }
