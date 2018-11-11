@@ -1,19 +1,24 @@
 {
-  "name": "repong",
-  "scripts": {
-    "start": "./lib/bs/bytecode/indexHot.byte",
-    "start:native": "./lib/bs/native/index.native",
-    "start:web": "bsb -make-world -w -backend js",
-    "build": "bsb -make-world",
-    "build:bytecode": "bsb -make-world -backend bytecode",
-    "build:web": "bsb -make-world -backend js",
-    "build:native": "bsb -make-world -backend native",
-    "clean": "bsb -clean-world"
-  },
-  "dependencies": {
-    "reprocessing": "0.2.0"
-  },
-  "devDependencies": {
-    "bsb-native": "4.0.6"
-  }
+    "name": "repong",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/illbexyz/repong.git"
+    },
+    "license": "MIT",
+    "scripts": {
+        "start": "./lib/bs/bytecode/indexHot.byte",
+        "start:native": "./lib/bs/native/index.native",
+        "start:web": "bsb -make-world -w -backend js",
+        "build": "bsb -make-world",
+        "build:bytecode": "bsb -make-world -backend bytecode",
+        "build:web": "bsb -make-world -backend js",
+        "build:native": "bsb -make-world -backend native",
+        "clean": "bsb -clean-world"
+    },
+    "dependencies": {
+        "reprocessing": "0.2.0"
+    },
+    "devDependencies": {
+        "bsb-native": "4.0.6"
+    }
 }

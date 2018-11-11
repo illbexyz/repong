@@ -1,16 +1,21 @@
 {
-  "name": "reprocessing-example",
-  "sources": "src",
-  "bs-dependencies": ["reprocessing"],
-  "entries": [{
-    "backend": "bytecode",
-    "main-module": "IndexHot"
-  },{
-    "backend": "native",
-    "main-module": "Index"
-  },{
-    "backend": "js",
-    "main-module": "Index"
-  }],
-  "refmt": 3
+    "name": "repong",
+    "version": "1.0.0",
+    "sources": "src",
+    "bs-dependencies": ["reprocessing"],
+    "entries": [
+        {
+            "backend": "bytecode",
+            "main-module": "IndexHot"
+        },
+        {
+            "backend": "native",
+            "main-module": "Index"
+        },
+        {
+            "backend": "js",
+            "main-module": "Index"
+        }
+    ],
+    "refmt": 3
 }
